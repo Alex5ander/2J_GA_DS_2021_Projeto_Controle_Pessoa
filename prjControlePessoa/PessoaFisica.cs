@@ -14,6 +14,17 @@ namespace prjControlePessoa
             this.CPF = CPF;
         }
 
+        public int calcular(int peso, int length, string[] digitos)
+        {
+            int soma = 0;
+            for (int i = 0; i < length; i++)
+            {
+                soma += peso * Int16.Parse(digitos[i]);
+                peso--;
+            }
+            return soma;
+        }
+
         public bool Validar()
         {
             if(CPF.Length != 11) return false;
@@ -21,38 +32,19 @@ namespace prjControlePessoa
             .Select(i => i.ToString()).ToArray();
 
             int peso = 10;
-            int soma = 0;
-            for (int i = 0; i < 9; i++)
-            {
-                soma += peso * Int16.Parse(digitos[i]); 
-                peso --;
-            }
-
+            int soma = calcular(peso, 9, digitos);
             int resto = soma % 11;
             int div1 = resto < 2 ? 0 : 11 - resto;
 
-            if(div1.ToString() != digitos[9]) 
-            {
-                return false;
-            }
+            if(div1.ToString() != digitos[9]) return false;
 
             peso = 11;
-            soma = 0;
-
-            for (int i = 0; i < 10; i++)
-            {
-                soma += peso * Int16.Parse(digitos[i]);
-                peso--;
-            }
-
+            soma = calcular(peso, 10, digitos);
             resto = soma % 11;
             int div2 = resto < 2 ? 0 : 11 - resto;
 
-            if(div2.ToString() != digitos[10]) {
-                return false;
-            }
+            if (div2.ToString() != digitos[10]) return false;
 
-            Console.WriteLine(div1);
             return true;
         }
     }
