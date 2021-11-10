@@ -9,6 +9,6 @@ namespace prjControlePessoa
     interface IPessoa
     {
         bool Validar();
-        string documento();
+        string documento {get;}
     }
 }

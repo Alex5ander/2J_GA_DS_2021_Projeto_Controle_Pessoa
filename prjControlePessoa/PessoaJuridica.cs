@@ -50,9 +50,12 @@ namespace prjControlePessoa
         }
 
 
-        public string documento()
+        public string documento
         {
-            return Nome + " CNPJ:" + CNPJ;
+            get
+            {
+                return Nome + " CNPJ:" + CNPJ;
+            }
         }
     }
 }

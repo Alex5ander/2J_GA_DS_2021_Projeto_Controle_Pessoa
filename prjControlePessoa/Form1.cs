@@ -13,7 +13,7 @@ namespace prjControlePessoa
     public partial class Form1 : Form
     {
 
-        IPessoa pessoa;
+        IPessoa p;
         BindingList<IPessoa> pessoas = new BindingList<IPessoa>();
         
         public Form1()
@@ -23,14 +23,16 @@ namespace prjControlePessoa
 
         private void btnValidar_Click(object sender, EventArgs e)
         {
-            if (pessoa.Validar())
+            p = (IPessoa) lbLista.SelectedItem;
+            if (p == null) return;
+            if (p.Validar())
             {
-                lbStatus.Text = pessoa.documento() + " válido";
+                lbStatus.Text = p.documento + " válido";
                 lbStatus.ForeColor = Color.Green;
             }
             else
             {
-                lbStatus.Text = pessoa.documento() + " inválido";
+                lbStatus.Text = p.documento + " inválido";
                 lbStatus.ForeColor = Color.Red;
             }
         }
@@ -39,14 +41,19 @@ namespace prjControlePessoa
         {
             if (rbPF.Checked)
             {
-                pessoa = new PessoaFisica(txtNome.Text, txtEndereco.Text, txtDocumento.Text);
+                p = new PessoaFisica(txtNome.Text, txtEndereco.Text, txtDocumento.Text);
             }
             else if (rbPJ.Checked)
             {
-                pessoa = new PessoaJuridica(txtNome.Text, txtEndereco.Text, txtDocumento.Text);
+                p = new PessoaJuridica(txtNome.Text, txtEndereco.Text, txtDocumento.Text);
             }
-            pessoas.Add(pessoa);
+            pessoas.Add(p);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
             lbLista.DataSource = pessoas;
+            lbLista.DisplayMember = "Documento";
         }
 
     }

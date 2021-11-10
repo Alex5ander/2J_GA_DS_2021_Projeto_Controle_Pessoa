@@ -49,9 +49,12 @@ namespace prjControlePessoa
         }
 
 
-        public string documento()
+        public string documento 
         {
-            return Nome + " CPF:" + CPF;
+            get
+            {
+                return Nome + " CPF:" + CPF;
+            }
         }
     }
 }

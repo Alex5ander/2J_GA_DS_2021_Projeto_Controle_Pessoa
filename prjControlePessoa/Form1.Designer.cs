@@ -46,20 +46,20 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Location = new System.Drawing.Point(8, 8);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 25);
+            this.label1.Size = new System.Drawing.Size(458, 42);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtNome
             // 
             this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNome.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtNome.Location = new System.Drawing.Point(8, 33);
+            this.txtNome.Location = new System.Drawing.Point(8, 50);
             this.txtNome.Margin = new System.Windows.Forms.Padding(0);
             this.txtNome.MaxLength = 45;
             this.txtNome.Name = "txtNome";
@@ -68,20 +68,20 @@
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Location = new System.Drawing.Point(8, 65);
+            this.label2.Location = new System.Drawing.Point(8, 82);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 25);
+            this.label2.Size = new System.Drawing.Size(458, 36);
             this.label2.TabIndex = 0;
             this.label2.Text = "Endereço";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtEndereco
             // 
             this.txtEndereco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEndereco.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtEndereco.Location = new System.Drawing.Point(8, 90);
+            this.txtEndereco.Location = new System.Drawing.Point(8, 118);
             this.txtEndereco.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtEndereco.MaxLength = 100;
             this.txtEndereco.Name = "txtEndereco";
@@ -139,19 +139,19 @@
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label3.Location = new System.Drawing.Point(8, 122);
+            this.label3.Location = new System.Drawing.Point(8, 150);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(192, 25);
+            this.label3.Size = new System.Drawing.Size(458, 35);
             this.label3.TabIndex = 7;
             this.label3.Text = "Número do documento";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtDocumento
             // 
             this.txtDocumento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDocumento.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtDocumento.Location = new System.Drawing.Point(8, 147);
+            this.txtDocumento.Location = new System.Drawing.Point(8, 185);
             this.txtDocumento.Margin = new System.Windows.Forms.Padding(8);
             this.txtDocumento.MaxLength = 15;
             this.txtDocumento.Name = "txtDocumento";
@@ -163,7 +163,7 @@
             this.flowLayoutPanel1.Controls.Add(this.rbPF);
             this.flowLayoutPanel1.Controls.Add(this.rbPJ);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(8, 179);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(8, 217);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(458, 42);
             this.flowLayoutPanel1.TabIndex = 8;
@@ -174,7 +174,7 @@
             this.lbLista.Dock = System.Windows.Forms.DockStyle.Top;
             this.lbLista.FormattingEnabled = true;
             this.lbLista.ItemHeight = 25;
-            this.lbLista.Location = new System.Drawing.Point(8, 221);
+            this.lbLista.Location = new System.Drawing.Point(8, 259);
             this.lbLista.Name = "lbLista";
             this.lbLista.Size = new System.Drawing.Size(458, 152);
             this.lbLista.TabIndex = 9;
@@ -216,6 +216,7 @@
             this.Padding = new System.Windows.Forms.Padding(8);
             this.ShowIcon = false;
             this.Text = "Validador de documentos";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
