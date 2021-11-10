@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace prjControlePessoa
 {
-    class PessoaFisica: Pessoa
+    class PessoaFisica: Pessoa, IPessoa
     {
         public string CPF { get; set; }
         public PessoaFisica(string Nome, string Endereco, string CPF) : base(Nome, Endereco)
@@ -46,6 +46,12 @@ namespace prjControlePessoa
             if (div2.ToString() != digitos[10]) return false;
 
             return true;
+        }
+
+
+        public string documento()
+        {
+            return Nome + " CPF:" + CPF;
         }
     }
 }

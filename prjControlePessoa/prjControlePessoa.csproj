@@ -50,6 +50,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="IPessoa.cs" />
     <Compile Include="Pessoa.cs" />
     <Compile Include="PessoaFisica.cs" />
     <Compile Include="PessoaJuridica.cs" />
@@ -72,6 +73,7 @@
     <None Include="ClassDiagram3.cd" />
     <None Include="ClassDiagram4.cd" />
     <None Include="ClassDiagram5.cd" />
+    <None Include="ClassDiagram6.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -38,6 +38,10 @@
             this.btnValidar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtDocumento = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.lbLista = new System.Windows.Forms.ListBox();
+            this.btnAdicionar = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -86,13 +90,11 @@
             // 
             // rbPF
             // 
-            this.rbPF.AutoSize = true;
             this.rbPF.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rbPF.Dock = System.Windows.Forms.DockStyle.Top;
-            this.rbPF.Location = new System.Drawing.Point(8, 122);
+            this.rbPF.Location = new System.Drawing.Point(4, 5);
             this.rbPF.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rbPF.Name = "rbPF";
-            this.rbPF.Size = new System.Drawing.Size(458, 29);
+            this.rbPF.Size = new System.Drawing.Size(231, 29);
             this.rbPF.TabIndex = 3;
             this.rbPF.TabStop = true;
             this.rbPF.Text = "Pessoa física";
@@ -100,13 +102,11 @@
             // 
             // rbPJ
             // 
-            this.rbPJ.AutoSize = true;
             this.rbPJ.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rbPJ.Dock = System.Windows.Forms.DockStyle.Top;
-            this.rbPJ.Location = new System.Drawing.Point(8, 151);
+            this.rbPJ.Location = new System.Drawing.Point(243, 5);
             this.rbPJ.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rbPJ.Name = "rbPJ";
-            this.rbPJ.Size = new System.Drawing.Size(458, 29);
+            this.rbPJ.Size = new System.Drawing.Size(211, 29);
             this.rbPJ.TabIndex = 4;
             this.rbPJ.TabStop = true;
             this.rbPJ.Text = "Pessoa jurídica";
@@ -141,7 +141,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label3.Location = new System.Drawing.Point(8, 180);
+            this.label3.Location = new System.Drawing.Point(8, 122);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(192, 25);
             this.label3.TabIndex = 7;
@@ -151,23 +151,58 @@
             // 
             this.txtDocumento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDocumento.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtDocumento.Location = new System.Drawing.Point(8, 205);
+            this.txtDocumento.Location = new System.Drawing.Point(8, 147);
+            this.txtDocumento.Margin = new System.Windows.Forms.Padding(8);
             this.txtDocumento.MaxLength = 15;
             this.txtDocumento.Name = "txtDocumento";
             this.txtDocumento.Size = new System.Drawing.Size(458, 32);
             this.txtDocumento.TabIndex = 5;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.rbPF);
+            this.flowLayoutPanel1.Controls.Add(this.rbPJ);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(8, 179);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(458, 42);
+            this.flowLayoutPanel1.TabIndex = 8;
+            // 
+            // lbLista
+            // 
+            this.lbLista.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbLista.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbLista.FormattingEnabled = true;
+            this.lbLista.ItemHeight = 25;
+            this.lbLista.Location = new System.Drawing.Point(8, 221);
+            this.lbLista.Name = "lbLista";
+            this.lbLista.Size = new System.Drawing.Size(458, 152);
+            this.lbLista.TabIndex = 9;
+            // 
+            // btnAdicionar
+            // 
+            this.btnAdicionar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdicionar.Location = new System.Drawing.Point(8, 379);
+            this.btnAdicionar.Name = "btnAdicionar";
+            this.btnAdicionar.Size = new System.Drawing.Size(458, 45);
+            this.btnAdicionar.TabIndex = 10;
+            this.btnAdicionar.Text = "Adicionar";
+            this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(474, 502);
+            this.Controls.Add(this.btnAdicionar);
+            this.Controls.Add(this.lbLista);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.txtDocumento);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnValidar);
             this.Controls.Add(this.lbStatus);
-            this.Controls.Add(this.rbPJ);
-            this.Controls.Add(this.rbPF);
             this.Controls.Add(this.txtEndereco);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNome);
@@ -181,6 +216,7 @@
             this.Padding = new System.Windows.Forms.Padding(8);
             this.ShowIcon = false;
             this.Text = "Validador de documentos";
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,6 +234,9 @@
         private System.Windows.Forms.Button btnValidar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDocumento;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.ListBox lbLista;
+        private System.Windows.Forms.Button btnAdicionar;
     }
 }
 

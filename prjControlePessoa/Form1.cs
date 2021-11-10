@@ -13,8 +13,9 @@ namespace prjControlePessoa
     public partial class Form1 : Form
     {
 
-        PessoaFisica PF;
-        PessoaJuridica PJ;
+        IPessoa pessoa;
+        BindingList<IPessoa> pessoas = new BindingList<IPessoa>();
+        
         public Form1()
         {
             InitializeComponent();
@@ -22,30 +23,31 @@ namespace prjControlePessoa
 
         private void btnValidar_Click(object sender, EventArgs e)
         {
+            if (pessoa.Validar())
+            {
+                lbStatus.Text = pessoa.documento() + " válido";
+                lbStatus.ForeColor = Color.Green;
+            }
+            else
+            {
+                lbStatus.Text = pessoa.documento() + " inválido";
+                lbStatus.ForeColor = Color.Red;
+            }
+        }
+
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
             if (rbPF.Checked)
             {
-                PF = new PessoaFisica(txtNome.Text, txtEndereco.Text, txtDocumento.Text);
-                if (PF.Validar())
-                {
-                    lbStatus.Text = "CPF válido";
-                }
-                else
-                {
-                    lbStatus.Text = "CPF inválido";
-                }
+                pessoa = new PessoaFisica(txtNome.Text, txtEndereco.Text, txtDocumento.Text);
             }
             else if (rbPJ.Checked)
             {
-                PJ = new PessoaJuridica(txtNome.Text, txtEndereco.Text, txtDocumento.Text);
-                if (PJ.Validar())
-                {
-                    lbStatus.Text = "CNPJ válido";
-                }
-                else 
-                {
-                    lbStatus.Text = "CNPJ inválido";
-                }
+                pessoa = new PessoaJuridica(txtNome.Text, txtEndereco.Text, txtDocumento.Text);
             }
+            pessoas.Add(pessoa);
+            lbLista.DataSource = pessoas;
         }
+
     }
 }

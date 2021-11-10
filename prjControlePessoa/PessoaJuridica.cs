@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace prjControlePessoa
 {
-    class PessoaJuridica : Pessoa
+    class PessoaJuridica : Pessoa, IPessoa
     {
         public string CNPJ { get; set; }
         public PessoaJuridica(string Nome, string Endereco, string CNPJ) : base (Nome, Endereco)
@@ -47,6 +47,12 @@ namespace prjControlePessoa
             if (div2.ToString() != digitos[13]) return false;
 
             return true;
+        }
+
+
+        public string documento()
+        {
+            return Nome + " CNPJ:" + CNPJ;
         }
     }
 }
