@@ -39,7 +39,11 @@ namespace prjControlePessoa
                 PJ = new PessoaJuridica(txtNome.Text, txtEndereco.Text, txtDocumento.Text);
                 if (PJ.Validar())
                 {
-
+                    lbStatus.Text = "CNPJ válido";
+                }
+                else 
+                {
+                    lbStatus.Text = "CNPJ inválido";
                 }
             }
         }
