@@ -114,7 +114,9 @@
             // 
             // lbStatus
             // 
+            this.lbStatus.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lbStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lbStatus.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbStatus.Location = new System.Drawing.Point(8, 469);
             this.lbStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbStatus.Name = "lbStatus";
